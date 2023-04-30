@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 
-public class TestQiwiBeelineSearchWithCsvFile extends TestBase {
+public class TestQiwiSearchWithCsvFile extends TestBase {
 
     @CsvFileSource(resources = "/BeelineSearch.csv")
     @ParameterizedTest(name = "Поиск провайдера по запросу {0} найден провайдер в списке {1}")
