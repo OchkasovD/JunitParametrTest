@@ -16,7 +16,7 @@ import static guru.qa.param.junit.data.DataSearch.*;
 
 
 
-public class TestLocaleMethodSource {
+public class TestLocaleMethodSource extends TestBase {
     static Stream<Arguments> LocaleMethodSource() {
         return Stream.of(
                 Arguments.of( homenet, List.of("Homenet")),
@@ -29,7 +29,6 @@ public class TestLocaleMethodSource {
     @DisplayName("Тест соответствия найденных провайдеров условиям поиска")
     @Tags({@Tag("CRITICAL"), @Tag("PROVIDERS")})
     void LocaleMethodSource (DataSearch request, List<String> provider) {
-        open("https://qiwi.com//search?/");
         $(".css-1r6sfml").setValue(String.valueOf(request));
         $(".css-9uy14h").click();
         $$(".css-2imjyh").filter(visible).shouldHave(texts(provider));
