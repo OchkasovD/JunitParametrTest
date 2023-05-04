@@ -18,7 +18,7 @@ public class TestQiwiSearchCsv extends TestBase {
     @ParameterizedTest(name = "Поиск провайдера по запросу {0} найден провайдер в списке {1}")
     @DisplayName("Тест для проверки нахождения провайдера в списке по условию поиска")
     @Tags({@Tag("CRITICAL"), @Tag("SEARCH"), @Tag("BEELINE"), @Tag("MTS")})
-    void TestSearch(String request, String provider) {
+    void testSearch(String request, String provider) {
 
     $(".css-1r6sfml").setValue(request);
     $(".css-9uy14h").click();

@@ -17,7 +17,7 @@ public class TestQiwiSearchValueSource extends TestBase {
     @ParameterizedTest(name = "Поиск провайдера по запросу {0} ")
     @DisplayName("Тест для проверки нахождения провайдера в списке по условию поиска")
     @Tags({@Tag("CRITICAL"), @Tag("SEARCH"), @Tag("BEELINE")})
-    void TestSearchBeline(String letters) {
+    void testSearchBeline(String letters) {
 
     $(".css-1r6sfml").setValue(letters);
     $(".css-9uy14h").click();

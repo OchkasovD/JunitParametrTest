@@ -17,10 +17,10 @@ import static guru.qa.param.junit.data.DataSearch.*;
 
 
 public class TestLocaleMethodSource extends TestBase {
-    static Stream<Arguments> LocaleMethodSource() {
+    static Stream<Arguments> localeMethodSource() {
         return Stream.of(
-                Arguments.of( homenet, List.of("Homenet")),
-                Arguments.of( mail, List.of( "Мини-игры@Mail.Ru"))
+                Arguments.of( HOMENET, List.of("Homenet")),
+                Arguments.of( MAIL, List.of( "Мини-игры@Mail.Ru"))
         );
 
     }
@@ -28,7 +28,7 @@ public class TestLocaleMethodSource extends TestBase {
     @ParameterizedTest(name = "Для локали {0} успешно отображаются провайдеры {1}")
     @DisplayName("Тест соответствия найденных провайдеров условиям поиска")
     @Tags({@Tag("CRITICAL"), @Tag("PROVIDERS")})
-    void LocaleMethodSource (DataSearch request, List<String> provider) {
+    void localeMethodSource (DataSearch request, List<String> provider) {
         $(".css-1r6sfml").setValue(String.valueOf(request));
         $(".css-9uy14h").click();
         $$(".css-2imjyh").filter(visible).shouldHave(texts(provider));
